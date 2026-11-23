@@ -1,0 +1,177 @@
+.mc-login {
+    width: min(calc(100% - var(--mc-gutter) - var(--mc-gutter)), 70rem);
+    padding-block: clamp(1.75rem, 5.4vw, 5rem) clamp(2.8rem, 6vw, 6rem);
+}
+
+.mc-login-panel {
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    min-height: 34rem;
+    overflow: hidden;
+    border: 1px solid var(--mc-line);
+    border-radius: clamp(1.15rem, 2.4vw, 1.9rem);
+    background: var(--mc-surface);
+    box-shadow: var(--mc-shadow);
+}
+
+.mc-login-content {
+    align-self: center;
+    min-width: 0;
+    padding: clamp(1.4rem, 4.75vw, 4rem);
+}
+
+.mc-login-content .mc-section-label {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.mc-login-content h1 {
+    font-size: clamp(2.05rem, 4.2vw, 3.35rem);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.mc-login-form {
+    display: grid;
+    gap: 1.1rem;
+    margin-block-start: 1.8rem;
+}
+
+.mc-login-field label {
+    display: block;
+    margin-block-end: .45rem;
+    color: var(--mc-ink);
+    font-size: .94rem;
+    font-weight: 750;
+}
+
+.mc-login-field input {
+    width: 100%;
+    min-height: 3.15rem;
+    padding: .6rem .875rem;
+    border: 1px solid var(--mc-line);
+    border-radius: .7rem;
+    background: var(--mc-page);
+    color: var(--mc-ink);
+}
+
+.mc-login-field input:focus {
+    border-color: var(--mc-brand);
+}
+
+.mc-login-field input[aria-invalid="true"] {
+    border-color: #b34c53;
+}
+
+.mc-login-password {
+    position: relative;
+}
+
+.mc-login-password input {
+    padding-inline-end: 3.4rem;
+}
+
+.mc-password-toggle.mc-icon-button {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: .24rem;
+    transform: translateY(-50%);
+    border-color: transparent;
+    border-radius: .55rem;
+    background: transparent;
+    color: var(--mc-muted);
+}
+
+.mc-password-toggle:hover {
+    color: var(--mc-brand);
+}
+
+.mc-password-toggle[aria-pressed="true"] .mc-eye-open,
+.mc-password-toggle[aria-pressed="false"] .mc-eye-closed {
+    display: none;
+}
+
+.mc-login-form > button {
+    gap: .85rem;
+}
+
+.mc-login-support {
+    padding-block-start: 1rem;
+    margin-block-start: 1.15rem;
+    border-block-start: 1px solid var(--mc-line);
+    color: var(--mc-muted);
+    font-size: .9rem;
+}
+
+.mc-login-support a {
+    color: var(--mc-brand);
+    font-weight: 750;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+}
+
+.mc-login-feedback {
+    padding: .68rem .8rem;
+    margin-block-start: 1.2rem;
+    border-radius: .65rem;
+    background: var(--mc-icon-bg);
+    color: var(--mc-brand);
+    font-size: .89rem;
+    font-weight: 650;
+}
+
+.mc-login-feedback-error {
+    background: #fff0ef;
+    color: #922631;
+}
+
+.mc-login-feedback-error:focus-visible {
+    outline-color: #b34c53;
+}
+
+[data-theme="dark"] .mc-login-feedback-error {
+    background: #42232d;
+    color: #ffb6be;
+}
+
+.mc-login-visual {
+    position: relative;
+    background: var(--mc-navy);
+}
+
+.mc-login-visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 52% center;
+}
+
+.mc-desktop-login[aria-current="page"] {
+    border-color: var(--mc-brand);
+    background: var(--mc-icon-bg);
+    color: var(--mc-brand);
+}
+
+@media (max-width: 720px) {
+    .mc-login-panel {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .mc-login-content {
+        padding-block: 1.4rem 1.7rem;
+    }
+
+    .mc-login-form {
+        gap: .85rem;
+        margin-block-start: 1.3rem;
+    }
+
+    .mc-login-visual {
+        order: -1;
+        min-height: clamp(8rem, 34vw, 15rem);
+    }
+}
